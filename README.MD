@@ -5,11 +5,18 @@
 - Convert Coop Invoice Positions to JSON
 - Create PDFs and printouts
 
-## Lokaler Start ##
+## Local Start ##
+
+Prerequisites development environment:
+
+* [Visual Studio Code - newest]
+* [GitHub - 2.34.1.windows.1](https://git-scm.com/)
+* [JDK11](https://openjdk.org/projects/jdk/11/)
+* [Quarkus] (https://quarkus.io/get-started/)
 
 ./mvnw compile quarkus:dev
 
-## Open UI ##
+## UI ##
 
 <http://localhost:8080/>
 
