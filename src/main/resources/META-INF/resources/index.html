@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <title>PDF Extractor</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a><h1>PDF Extractor</h1></a>
+    <p>Bitte PDF-Datei auswählen:</p>
+    <form enctype="multipart/form-data" method="post" action="/rest/extract">
+      <input name="pdfFile" type="file" accept="application/pdf" />
+      <input
+        type="submit"
+        value="Einlesen (alles)"
+        id="submitAll"
+      />
+      <input
+        type="submit"
+        value="Einlesen (Coop-Artikel)"
+        id="article"
+        formaction="/rest/article"
+      />
+    </form>
+  </body>
+</html>

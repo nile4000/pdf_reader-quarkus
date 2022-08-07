@@ -1,0 +1,14 @@
+dev\morling\quarkus\pdfextract\extract\TextLine.class
+dev\morling\quarkus\pdfextract\extract\Character.class
+dev\morling\quarkus\pdfextract\extract\CharacterFactory.class
+dev\morling\quarkus\pdfextract\extract\ExtractPositionDetail.class
+dev\morling\quarkus\pdfextract\model\Beleg.class
+dev\morling\quarkus\pdfextract\extract\ExtractCoopPosition.class
+dev\morling\quarkus\pdfextract\model\Position.class
+dev\morling\quarkus\pdfextract\PDFExtractionResource.class
+dev\morling\quarkus\pdfextract\JNIRegistrationFeature.class
+dev\morling\quarkus\pdfextract\extract\PDFLayoutTextStripper.class
+dev\morling\quarkus\pdfextract\index\IndexPDFFiles.class
+dev\morling\quarkus\pdfextract\index\LucenePDFDocument.class
+dev\morling\quarkus\pdfextract\writer\JSONFileWriter.class
+dev\morling\quarkus\pdfextract\FormData.class
