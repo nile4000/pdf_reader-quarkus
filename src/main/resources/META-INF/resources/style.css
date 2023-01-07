@@ -1,32 +1,64 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-    background-color: #e7e7e7;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-size: large;
-    margin-left: 40px;
-  }
-  
-  h1 {
-    color: rgb(0, 0, 0);
-    font-size: xx-large;
-  }
+  color: rgba(225, 225, 225, 0.87);
+  font-family: "Fira Code", monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  margin: 0;
+}
 
-input[type=submit] {
-    background-color: #81d17a;
-    border: none;
-    animation: normal;
-    color: rgb(255, 255, 255);
-    padding: 16px 32px;
-    text-decoration: none;
-    margin: 4px 2px;
-    cursor: pointer;
-  }
+.background {
+  background-image: url("./assets/background-radiant.svg");
+  background-size: cover;
+  background-position: center;
+}
 
-  input[type=file] {
-    background-color: #e7e7e7;
-    border: none;
-    color: rgb(0, 0, 0);
-    padding: 16px 32px;
-    text-decoration: none;
-    margin: 4px 2px;
-    cursor: pointer;
-  }
+h1 {
+  font-size: xx-large;
+  font-weight: 300;
+  margin: 16px;
+}
+
+input[type="submit"] {
+  background-color: #91da8a;
+  border: none;
+  animation: normal;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+input[type="file"] {
+  background-color: transparent;
+  border: none;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.container {
+  min-height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 0;
+}
+
+footer {
+  padding: 0px;
+  font-size: 14px;
+}
+
+footer p,
+a {
+  margin: 0px;
+  text-align: center;
+}
