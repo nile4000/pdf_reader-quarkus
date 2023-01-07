@@ -1,25 +1,5 @@
 # quarkus-pdf-extract Project #
 
-### Thema json-b ###
-
-### Ziele json-b ###
-
-- Aus mehreren PDF-Dokumenten eine JSON-Dateien mit JSON-B zu erstellen
-- Erweiterte Aufteilung des PDF-Dokuments
-#### Vorgehen json-b ####
-
-- Betriebstest
-- Json-B kennen lernen
-- Umbau FileUpload - diverse Tests FileUploadService
-- Recherche Multipart Data
-- JSON-Filewriterkomponente bauen
-- ExtractDetail Funktion bauen
-- Beleg / Position Klassen erstellen
-- JSON-Mapping Tests
-- JSON-Mapping erweitern
-- JSON-File Erstellung und Test
-- Test ArrayList zu JSON fehlgeschlagen (nur ein Artikel wird eingelesen)
-
 ### Thema pdfbox ###
 
 - Dokumente in andere Formate umwandeln
@@ -31,7 +11,7 @@
 - Aus dem PDF sollen einzelne Zeilen extrahiert und umgewandelt werden.
 - Das PDF-Dokument soll nach gewissen mustern aufgeteilt werden (Artikel Menge Preis Aktion Total Zusatz Datum;)
 
-#### Vorgehen pdfbox ####
+#### Dokumentation pdfReader ####
 
 - Betrieb der Applikation (Quarkus)
 - „GUI“-Anpassung "index.html"
@@ -49,5 +29,5 @@
 <http://localhost:8080/>
 
 -> Datei auswählen im Ordner "/PDF_Documents"
--> Gesamte Dateistruktur umwandeln mit Button "Einlesen (alles)"
--> Artikel extrahieren mit Button "Einlesen (Coop-Artikel)"
+-> Gesamten Text umwandeln in .txt mit Button "Einlesen (alles)"
+-> Einzelne Artikel extrahieren mit Button "Einlesen (Coop-Artikel)"

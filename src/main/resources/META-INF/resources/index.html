@@ -9,15 +9,16 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="background">
-    <header>
+    <header class="container-header">
       <h1>PDF Extractor V1.0</h1>
-    </header>
-    <main class="container">
       <p>
         Dieses Tool liest eine Coop Quittung (PDF) ein und extrahiert den Text
         daraus. Ihre Coop Quittungen können sie unter supercard.ch abholen. Der
-        Text kann anschliessend in eine Textdatei exportiert werden.
+        Text kann anschliessend mit "Alles einlesen" oder "Einzelne Artikel
+        einlesen" in ein Textformat exportiert werden.
       </p>
+    </header>
+    <main class="container-main">
       <p>Bitte PDF-Datei auswählen:</p>
       <form enctype="multipart/form-data" method="post" action="/rest/extract">
         <input name="pdfFile" type="file" accept="application/pdf" />
@@ -32,7 +33,6 @@
     </main>
     <footer>
       <p class="underlining underlining--thick">
-        Copyright ©
         <script type="text/javascript">
           document.write(new Date().getFullYear());
         </script>
