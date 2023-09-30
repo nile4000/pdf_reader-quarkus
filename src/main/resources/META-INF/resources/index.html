@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="de">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="keywords" content="pdfToText, lueem.dev, Lüem" />
+
     <title>PDF to Text</title>
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
-    <meta name="keywords" content="pdfToText, lueem.dev, Lüem" />
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body class="background">
     <header class="container-header">
       <h1>PDF Extractor V1.0</h1>
@@ -18,6 +20,7 @@
         einlesen" in ein Textformat exportiert werden.
       </p>
     </header>
+
     <main class="container-main">
       <p>Bitte PDF-Datei auswählen:</p>
       <form enctype="multipart/form-data" method="post" action="/rest/extract">
@@ -31,12 +34,13 @@
         />
       </form>
     </main>
+
     <footer>
       <p class="underlining underlining--thick">
         <script type="text/javascript">
-          document.write(new Date().getFullYear());
+          document.querySelector(".underlining--thick").innerText =
+            new Date().getFullYear() + " lueem.dev";
         </script>
-        lueem.dev
       </p>
     </footer>
   </body>

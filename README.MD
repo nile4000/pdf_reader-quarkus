@@ -1,33 +1,41 @@
-# quarkus-pdf-extract Project #
+## Quarkus-PDF-Extract Projekt
 
-### Thema pdfbox ###
+### pdfbox Übersicht
 
-- Dokumente in andere Formate umwandeln
-- Erstellen von PDFs und Druckerzeugnissen
+- Konversion von Dokumenten.
+- PDF-Erstellung und Druckausgabe.
 
-### Ziele pdfbox ###
+### pdfbox Ziele
 
-- Einen Endpunkt erstellen an den PDF-Dokumente gesendet werden können.
-- Aus dem PDF sollen einzelne Zeilen extrahiert und umgewandelt werden.
-- Das PDF-Dokument soll nach gewissen mustern aufgeteilt werden (Artikel Menge Preis Aktion Total Zusatz Datum;)
+- Endpunkt für PDF-Empfang.
+- Extraktion und Umwandlung von PDF-Zeilen.
+- Aufteilung nach Mustern: Artikel, Menge, Preis, Aktion, Total, Zusatz, Datum.
 
-#### Dokumentation pdfReader ####
+### Dokumentation pdfReader
 
-- Betrieb der Applikation (Quarkus)
-- „GUI“-Anpassung "index.html"
-- In der Klasse ExtractCoopPosition könnnen Positionen aus den PDF-Dateien im Ordner "PDF_Documents" extrahiert und zusammengestellt werden
-- PDF-Dokument lesen & drucken im .txt-Format mit PDFBox (PDFLayoutTextStripper)
-- Dokumente indexieren, unstrukturierte Daten durchsuchbar machen mit dem Einsatz von Lucene "..\pdfextract\index"
-- "Metadata" extrahiert mit PDFBox (PDFExtractionresource)
+- Applikationsbetrieb mit Quarkus.
+- GUI-Anpassung in "index.html".
+- In "ExtractCoopPosition": Positionsextraktion aus PDFs in "PDF_Documents".
+- Lesen und Ausdruck von PDFs im .txt mit PDFBox (PDFLayoutTextStripper).
+- Indexierung und Suche mit Lucene in "..\pdfextract\index".
+- Metadaten-Extraktion via PDFBox (PDFExtractionresource).
 
-## Lokaler Start ##
+### Starten
 
+```bash
 ./mvnw compile quarkus:dev
+```
 
-## Open UI ##
+### UI Testen
 
-<http://localhost:8080/>
+- Öffne <http://localhost:8080/>.
+- Wähle Datei in "/PDF_Documents".
+- Konvertiere Text mit "Einlesen (alles)".
+- Extrahiere Artikel mit "Einlesen (Coop-Artikel)".
 
--> Datei auswählen im Ordner "/PDF_Documents"
--> Gesamten Text umwandeln in .txt mit Button "Einlesen (alles)"
--> Einzelne Artikel extrahieren mit Button "Einlesen (Coop-Artikel)"
+## Creating a native executable
+
+You can create a native executable using: 
+```shell script
+./mvnw package -Dnative
+```
