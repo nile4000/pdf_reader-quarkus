@@ -4,25 +4,12 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.PrintStream;
 import java.io.StringReader;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.List;
-import java.util.Locale;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+
 
 import jakarta.json.Json;
-import jakarta.json.JsonArray;
-import jakarta.json.JsonArrayBuilder;
 import jakarta.json.JsonObject;
 import jakarta.json.JsonReader;
-import jakarta.json.JsonValue;
 import jakarta.json.stream.JsonParsingException;
 import jakarta.ws.rs.BadRequestException;
 import jakarta.ws.rs.Consumes;
@@ -39,8 +26,8 @@ import org.apache.pdfbox.pdmodel.PDDocument;
 import org.jboss.resteasy.annotations.providers.multipart.MultipartForm;
 
 import dev.lueem.ai.OpenAiClient;
-import dev.lueem.extract.ExtractCoopPosition;
-import dev.lueem.extract.ExtractPositionDetail;
+// import dev.lueem.extract.ExtractCoopPosition;
+// import dev.lueem.extract.ExtractPositionDetail;
 import dev.lueem.extract.PDFLayoutTextStripper;
 import dev.lueem.writer.JSONFileWriter;
 
@@ -52,29 +39,29 @@ public class PDFExtractionResource {
     private static final String FILE_REASON_HEADER = "Reason";
     private static final String NO_PDF_UPLOADED_MSG = "No PDF file was uploaded (use form parameter 'pdfFile')";
 
-    ExtractCoopPosition extractLine = new ExtractCoopPosition();
-    ExtractPositionDetail articleDetail = new ExtractPositionDetail();
+    // ExtractCoopPosition extractLine = new ExtractCoopPosition();
+    // ExtractPositionDetail articleDetail = new ExtractPositionDetail();
     JSONFileWriter jsonFileWriter = new JSONFileWriter();
 
-    @POST
-    @Path("/extract")
-    @Consumes(MediaType.MULTIPART_FORM_DATA)
-    @Produces(MediaType.APPLICATION_OCTET_STREAM)
-    public Response extractTextFromPdf(@MultipartForm FormData formData) {
-        if (formData.getPdfFile() == null) {
-            return createBadRequestResponse(NO_PDF_UPLOADED_MSG);
-        }
+    // @POST
+    // @Path("/extract")
+    // @Consumes(MediaType.MULTIPART_FORM_DATA)
+    // @Produces(MediaType.APPLICATION_OCTET_STREAM)
+    // public Response extractTextFromPdf(@MultipartForm FormData formData) {
+    //     if (formData.getPdfFile() == null) {
+    //         return createBadRequestResponse(NO_PDF_UPLOADED_MSG);
+    //     }
 
-        File pdfFile = convertInputStreamToFile(formData.getPdfFile());
-        String text = getText(pdfFile);
+    //     File pdfFile = convertInputStreamToFile(formData.getPdfFile());
+    //     String text = getText(pdfFile);
 
-        LocalDate localDate = extractCreationDateFromPdf(pdfFile);
-        File temp = createTempFileWithText(text);
+    //     LocalDate localDate = extractCreationDateFromPdf(pdfFile);
+    //     File temp = createTempFileWithText(text);
 
-        return Response.ok(temp, MediaType.APPLICATION_OCTET_STREAM)
-                .header("Content-Disposition", "attachment;filename=" + localDate + "_content_extracted.txt")
-                .build();
-    }
+    //     return Response.ok(temp, MediaType.APPLICATION_OCTET_STREAM)
+    //             .header("Content-Disposition", "attachment;filename=" + localDate + "_content_extracted.txt")
+    //             .build();
+    // }
 
     private Response createBadRequestResponse(String reason) {
         return Response.status(Status.BAD_REQUEST).header(FILE_REASON_HEADER, reason).build();
@@ -97,27 +84,27 @@ public class PDFExtractionResource {
         return tempFile;
     }
 
-    private LocalDate extractCreationDateFromPdf(File pdfFile) {
-        try (PDDocument doc = Loader.loadPDF(pdfFile)) {
-            Calendar creationDate = doc.getDocumentInformation().getCreationDate();
-            return LocalDateTime.ofInstant(creationDate.toInstant(), creationDate.getTimeZone().toZoneId())
-                    .toLocalDate();
-        } catch (IOException e) {
-            throw new RuntimeException("Error extracting creation date from the PDF", e);
-        }
-    }
+    // private LocalDate extractCreationDateFromPdf(File pdfFile) {
+    //     try (PDDocument doc = Loader.loadPDF(pdfFile)) {
+    //         Calendar creationDate = doc.getDocumentInformation().getCreationDate();
+    //         return LocalDateTime.ofInstant(creationDate.toInstant(), creationDate.getTimeZone().toZoneId())
+    //                 .toLocalDate();
+    //     } catch (IOException e) {
+    //         throw new RuntimeException("Error extracting creation date from the PDF", e);
+    //     }
+    // }
 
-    private File createTempFileWithText(String text) {
-        try {
-            File temp = File.createTempFile("tempfile", ".tmp");
-            try (PrintStream out = new PrintStream(new FileOutputStream(temp))) {
-                out.print(text);
-            }
-            return temp;
-        } catch (IOException e) {
-            throw new RuntimeException("Error creating temp file", e);
-        }
-    }
+    // private File createTempFileWithText(String text) {
+    //     try {
+    //         File temp = File.createTempFile("tempfile", ".tmp");
+    //         try (PrintStream out = new PrintStream(new FileOutputStream(temp))) {
+    //             out.print(text);
+    //         }
+    //         return temp;
+    //     } catch (IOException e) {
+    //         throw new RuntimeException("Error creating temp file", e);
+    //     }
+    // }
 
     @POST
     @Path("/article")

@@ -24,6 +24,7 @@ public class OpenAiClient {
 
     public OpenAiClient() {
 
+        service = new OpenAiService("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");
 
     }
 

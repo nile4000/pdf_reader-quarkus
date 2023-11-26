@@ -17,11 +17,11 @@ public class JSONFileWriter {
      * @throws IOException if there is an error writing to the file
      */
     public void writeJSONFile(String fileName, JsonObject jsonObject) throws IOException {
-        try (FileWriter newFileWriter = new FileWriter(fileName)) {
-            Json.createWriter(newFileWriter).writeObject(jsonObject);
-        } catch (IOException e) {
-            System.err.println("Error writing to file: " + e.getMessage());
-            throw e; // rethrow the exception so that the caller is aware of it
-        }
+        // try (FileWriter newFileWriter = new FileWriter(fileName)) {
+        //     Json.createWriter(newFileWriter).writeObject(jsonObject);
+        // } catch (IOException e) {
+        //     System.err.println("Error writing to file: " + e.getMessage());
+        //     throw e; // rethrow the exception so that the caller is aware of it
+        // }
     }
 }

@@ -5,10 +5,10 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-import org.apache.lucene.document.Document;
-import org.apache.lucene.index.IndexWriter;
-import org.apache.lucene.index.IndexWriterConfig.OpenMode;
-import org.apache.lucene.index.Term;
+// import org.apache.lucene.document.Document;
+// import org.apache.lucene.index.IndexWriter;
+// import org.apache.lucene.index.IndexWriterConfig.OpenMode;
+// import org.apache.lucene.index.Term;
 
 /**
  * Index all pdf files under a directory.
@@ -41,7 +41,7 @@ public class IndexPDFFiles {
      *               files to index
      * @throws IOException If there is a low-level I/O error
      */
-    static void indexDocs(IndexWriter writer, File file) throws IOException {
+    // static void indexDocs(IndexWriter writer, File file) throws IOException {
         // do not try to index files that cannot be read
         // if (file.canRead()) {
         //     if (file.isDirectory()) {
@@ -92,5 +92,5 @@ public class IndexPDFFiles {
         //         }
         //     }
         // }
-    }
+    // }
 }
