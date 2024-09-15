@@ -5,43 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="keywords" content="pdfToText, lueem.dev, Lüem" />
 
-    <title>PDF to Text</title>
+    <title>PDF zu Text Konverter</title>
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
     <link rel="stylesheet" href="style.css" />
+    <!-- Schriftart einbinden -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+    />
   </head>
 
-  <body class="background">
-    <header class="container-header">
+  <body>
+    <header>
       <h1>PDF Extractor V1.0</h1>
       <p>
-        Dieses Tool liest eine Coop Quittung (PDF) ein und extrahiert den Text
-        daraus. Ihre Coop Quittungen können sie unter supercard.ch abholen. Der
-        Text kann anschliessend mit "Alles einlesen" oder "Einzelne Artikel
-        einlesen" in ein Textformat exportiert werden.
+        Dieses Tool liest eine Quittung (PDF) ein und extrahiert den Text
+        daraus. Ihre Quittungen können Sie z.B. unter supercard.ch abholen. Der
+        Text kann anschliessend mit "Einzelne Artikel einlesen" in ein
+        JSON-Textformat exportiert werden.
       </p>
     </header>
 
-    <main class="container-main">
-      <p>Bitte PDF-Datei auswählen:</p>
-      <form enctype="multipart/form-data" method="post" action="/rest/extract">
-        <input name="pdfFile" type="file" accept="application/pdf" />
-        <input type="submit" value="Alles einlesen" id="submitAll" />
-        <input
-          type="submit"
-          value="Einzelne Artikel einlesen"
-          id="article"
-          formaction="/rest/article"
-        />
-      </form>
+    <main>
+      <section class="upload-section">
+        <h2>Bitte PDF-Datei auswählen:</h2>
+        <form
+          enctype="multipart/form-data"
+          method="post"
+          action="/rest/extract"
+        >
+          <label for="pdfFile" class="file-label">
+            PDF-Datei auswählen
+            <input
+              id="pdfFile"
+              name="pdfFile"
+              type="file"
+              accept="application/pdf"
+            />
+          </label>
+          <div class="button-group">
+            <button
+              type="submit"
+              class="btn"
+              id="article"
+              formaction="/rest/article"
+            >
+              Einzelne Artikel einlesen
+            </button>
+          </div>
+        </form>
+      </section>
     </main>
 
     <footer>
-      <p class="underlining underlining--thick">
-        <script type="text/javascript">
-          document.querySelector(".underlining--thick").innerText =
-            new Date().getFullYear() + " lueem.dev";
-        </script>
-      </p>
+      <p>&copy; <span id="currentYear"></span> lueem.dev</p>
     </footer>
+
+    <script type="text/javascript">
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+    </script>
   </body>
 </html>

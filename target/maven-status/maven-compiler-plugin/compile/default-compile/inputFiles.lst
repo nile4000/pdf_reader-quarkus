@@ -1,9 +1,7 @@
-C:\dev\mymenu\Middleware\pdfREADER\src\main\java\dev\lueem\index\IndexPDFFiles.java
-C:\dev\mymenu\Middleware\pdfREADER\src\main\java\dev\lueem\extract\PDFLayoutTextStripper.java
-C:\dev\mymenu\Middleware\pdfREADER\src\main\java\dev\lueem\model\Beleg.java
-C:\dev\mymenu\Middleware\pdfREADER\src\main\java\dev\lueem\ai\OpenAiFunctions.java
-C:\dev\mymenu\Middleware\pdfREADER\src\main\java\dev\lueem\FormData.java
-C:\dev\mymenu\Middleware\pdfREADER\src\main\java\dev\lueem\ai\OpenAiClient.java
-C:\dev\mymenu\Middleware\pdfREADER\src\main\java\dev\lueem\model\Article.java
-C:\dev\mymenu\Middleware\pdfREADER\src\main\java\dev\lueem\PDFExtractionResource.java
-C:\dev\mymenu\Middleware\pdfREADER\src\main\java\dev\lueem\writer\JSONFileWriter.java
+C:\dev\pdfREADER\pdfREADER\src\main\java\dev\lueem\FormData.java
+C:\dev\pdfREADER\pdfREADER\src\main\java\dev\lueem\PDFExtractionResource.java
+C:\dev\pdfREADER\pdfREADER\src\main\java\dev\lueem\model\Article.java
+C:\dev\pdfREADER\pdfREADER\src\main\java\dev\lueem\writer\JSONFileWriter.java
+C:\dev\pdfREADER\pdfREADER\src\main\java\dev\lueem\ai\OpenAiFunctions.java
+C:\dev\pdfREADER\pdfREADER\src\main\java\dev\lueem\ai\OpenAiClient.java
+C:\dev\pdfREADER\pdfREADER\src\main\java\dev\lueem\extract\PDFLayoutTextStripper.java

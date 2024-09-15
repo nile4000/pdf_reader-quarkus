@@ -1,5 +1,7 @@
 ## Quarkus-PDF-Extract Projekt
 
+![alt text](image.png)
+
 ### pdfbox Übersicht
 
 - Konversion von Dokumenten.
@@ -15,10 +17,10 @@
 
 - Applikationsbetrieb mit Quarkus.
 - GUI-Anpassung in "index.html".
+- Kategorisierung via ChatGPT
 - In "ExtractCoopPosition": Positionsextraktion aus PDFs in "PDF_Documents".
 - Lesen und Ausdruck von PDFs im .txt mit PDFBox (PDFLayoutTextStripper).
-- Indexierung und Suche mit Lucene in "..\pdfextract\index".
-- Metadaten-Extraktion via PDFBox (PDFExtractionresource).
+- Extraktion via PDF-Box
 
 ### Starten
 

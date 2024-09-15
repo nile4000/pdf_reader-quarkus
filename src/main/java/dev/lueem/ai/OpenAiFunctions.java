@@ -1,64 +1,57 @@
 package dev.lueem.ai;
 
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 
 import dev.lueem.model.Article;
-import jakarta.json.bind.annotation.JsonbNumberFormat;
+import java.util.List;
 
 public class OpenAiFunctions {
 
-    public static class Articles {
-        @JsonPropertyDescription("The text to extract the articles from")
+    public static class ArticlesRequest {
+
         @JsonProperty(required = true)
-        public String text;
-        public String name;
-        public double price;
-        public int quantity;
-        public double discount;
-        public double total;
-    }
+        @JsonPropertyDescription("Der Text, aus dem die Artikel extrahiert werden sollen")
+        private String text;
 
-    public static class ArticlesResponse {
-        public String name;
-        public double price;
-        public int quantity;
-        public double discount;
-        public double total;
+        // Standardkonstruktor
+        public ArticlesRequest() {
+        }
 
-        public ArticlesResponse(String name, double price, int quantity, double discount, double total) {
-            this.name = name;
-            this.price = price;
-            this.quantity = quantity;
-            this.discount = discount;
-            this.total = total;
+        public ArticlesRequest(String text) {
+            this.text = text;
+        }
+
+        // Getter und Setter
+        public String getText() {
+            return text;
+        }
+
+        public void setText(String text) {
+            this.text = text;
         }
     }
 
-    public static class Weather {
-        @JsonPropertyDescription("City and state, for example: León, Guanajuato")
-        public String location;
+    public static class ArticlesResponse {
 
-        @JsonPropertyDescription("The temperature unit, can be 'celsius' or 'fahrenheit'")
-        @JsonProperty(required = true)
-        public WeatherUnit unit;
-    }
+        @JsonPropertyDescription("Die Liste der extrahierten Artikel")
+        private List<Article> articles;
 
-    public enum WeatherUnit {
-        CELSIUS, FAHRENHEIT;
-    }
+        public ArticlesResponse() {
+        }
 
-    public static class WeatherResponse {
-        public String location;
-        public WeatherUnit unit;
-        public int temperature;
-        public String description;
+        public ArticlesResponse(List<Article> articles) {
+            this.articles = articles;
+        }
 
-        public WeatherResponse(String location, WeatherUnit unit, int temperature, String description) {
-            this.location = location;
-            this.unit = unit;
-            this.temperature = temperature;
-            this.description = description;
+        // Getter und Setter
+        public List<Article> getArticles() {
+            return articles;
+        }
+
+        public void setArticles(List<Article> articles) {
+            this.articles = articles;
         }
     }
 

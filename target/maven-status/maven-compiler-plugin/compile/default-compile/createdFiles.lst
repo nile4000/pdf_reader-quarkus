@@ -3,15 +3,10 @@ dev\lueem\extract\Character.class
 dev\lueem\ai\OpenAiFunctions$ArticlesResponse.class
 dev\lueem\PDFExtractionResource.class
 dev\lueem\ai\OpenAiClient.class
-dev\lueem\model\Beleg.class
 dev\lueem\ai\OpenAiFunctions.class
-dev\lueem\ai\OpenAiFunctions$WeatherUnit.class
 dev\lueem\extract\TextLine.class
-dev\lueem\ai\OpenAiFunctions$WeatherResponse.class
-dev\lueem\index\IndexPDFFiles.class
 dev\lueem\model\Article.class
-dev\lueem\ai\OpenAiFunctions$Weather.class
+dev\lueem\ai\OpenAiFunctions$ArticlesRequest.class
 dev\lueem\FormData.class
-dev\lueem\ai\OpenAiFunctions$Articles.class
 dev\lueem\extract\CharacterFactory.class
 dev\lueem\writer\JSONFileWriter.class
